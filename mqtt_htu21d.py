@@ -53,7 +53,9 @@ while True:
 #h, t = htu.all()  # read both at once
     client.publish("home/cellarleft/humidity", "test, " + str(round(h.RH,2)   )
     client.publish("home/cellarleft/temperature", "test, " + str(round(t.C,2)  )
-
+    client.publish("home/cellarleft/humidityview",  str(round(h.RH,2)   )
+    client.publish("home/cellarleft/temperatureview",  + str(round(t.C,2)  )
+  
 
 
 
