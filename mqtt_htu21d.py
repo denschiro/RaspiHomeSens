@@ -43,23 +43,15 @@ while True:
     htu = HTU21D(1, 0x40)
 
     h = htu.humidity()  # read humidity
-#print(h)            # namedtuple
-#print(h.RH)         # relative humidity
-
+    #print(h)            # namedtuple
+    #print(h.RH)         # relative humidity
     t = htu.temperature()  # read temperature
-#print(t)               # namedtuple
-#print(t.F)             # Fahrenheit
+    #print(t)               # namedtuple
+    #print(t.F)             # Fahrenheit
 
-#h, t = htu.all()  # read both at once
-    client.publish("home/cellarleft/humidity", "test, " + str(round(h.RH,2)   )
-    client.publish("home/cellarleft/temperature", "test, " + str(round(t.C,2)  )
-    client.publish("home/cellarleft/humidityview",  str(round(h.RH,2)   )
-    client.publish("home/cellarleft/temperatureview",  + str(round(t.C,2)  )
-  
-
-
-
-
-
-
-
+    #h, t = htu.all()  # read both at once
+    client.publish("home/cellarleft/humidity", "pitwo, " + str(round(h.RH,2) )  )
+    client.publish("home/cellarleft/temperature", "pitwo, " + str(round(t.C ,2)) )
+   # time.sleep(10)
+    client.publish("home/cellarleft/humidityview",  str(round(h.RH,2) ))
+    client.publish("home/cellarleft/temperatureview",  str(round(t.C ,2) ))
