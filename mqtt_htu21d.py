@@ -49,24 +49,28 @@ while True:
     t = htu.temperature()  # read temperature
     #print(t)               # namedtuple
     #print(t.F)             # Fahrenheit
-    if hOld == h :
+    a = round (h.RH,1)
+    b = round (t.C,1)
+    if abs (hOld - a) < 0.1 :
         continue
     else:
            #h, t = htu.all()  # read both at once
         client.publish("home/cellarleft/humidity", "pitwo, " + str(round(h.RH,1) )  )
         #client.publish("home/cellarleft/temperature", "pitwo, " + str(round(t.C ,1)) )
-
-    hOld = h
+         #print("send h")
+   
+        hOld = round( h.RH,1) 
     
 
-    if tOld == t :
+    if abs (tOld - b) < 0.1 :
         continue
     else:
            #h, t = htu.all()  # read both at once
         #client.publish("home/cellarleft/humidity", "pitwo, " + str(round(h.RH,1) )  )
         client.publish("home/cellarleft/temperature", "pitwo, " + str(round(t.C ,1)) )
-
-    tOld = t
+        # print("send t")
+       
+        tOld = round( t.C,1) 
 
    # time.sleep(10)
     #client.publish("home/cellarleft/humidityview",  str(round(h.RH,2) ))
