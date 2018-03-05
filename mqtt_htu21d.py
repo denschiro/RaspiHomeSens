@@ -51,7 +51,7 @@ while True:
     #print(t.F)             # Fahrenheit
     a = round (h.RH,1)
     b = round (t.C,1)
-    if abs (hOld - a) < 0.1 :
+    if abs (hOld - a) < 1.0 :
         continue
     else:
            #h, t = htu.all()  # read both at once
