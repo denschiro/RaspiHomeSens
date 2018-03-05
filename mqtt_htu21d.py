@@ -39,7 +39,7 @@ hOld = 0
 tOld = 0
 while True:
     
-    time.sleep(20)
+    time.sleep(5)
     # I2C bus=1, Address=0x40
     htu = HTU21D(1, 0x40)
 
